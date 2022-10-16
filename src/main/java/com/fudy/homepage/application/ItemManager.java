@@ -6,6 +6,7 @@ import com.fudy.homepage.domain.Item;
 import com.fudy.homepage.interfaces.dto.PaginationQuery;
 import com.fudy.homepage.interfaces.dto.SimpleItemDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Validated
 @Service
 public class ItemManager {
-    @Autowired
+    @Autowired @Qualifier("ESItemRepository")
     private ItemRepository repository;
     @Autowired
     private SimpleItemAssembler assembler;

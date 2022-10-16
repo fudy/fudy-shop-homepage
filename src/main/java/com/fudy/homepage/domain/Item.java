@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 @Data
 public class Item {
     /**
+     * id
+     */
+    private Long id;
+    /**
      * 商品名称
      */
     private String name;
