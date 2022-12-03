@@ -11,5 +11,7 @@ public interface ItemConvertor {
 
     Item toItem(ItemDO itemDO);
 
+    ItemDO toItemDO(Item item);
+
     List<Item> toItemList(List<ItemDO> itemDOList);
 }

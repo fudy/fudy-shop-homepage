@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("DBItemRepository")
 public class DBItemRepository implements ItemRepository {
     @Autowired
     private ItemMapper mapper;
@@ -21,5 +21,15 @@ public class DBItemRepository implements ItemRepository {
     public List<Item> getItemList(PaginationQuery query) {
         List<ItemDO> list = mapper.selectList(query.getPageIndex(), query.getPageSize());
         return convertor.toItemList(list);
+    }
+
+    @Override
+    public void saveItemList(List<Item> itemList) {
+        throw new RuntimeException("not available");
+    }
+
+    @Override
+    public void saveItem(Item item) {
+        throw new RuntimeException("not available");
     }
 }

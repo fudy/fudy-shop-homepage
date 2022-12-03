@@ -1,7 +1,10 @@
 package com.fudy.homepage.infrastructure.mybatis.mapper;
 
 import com.fudy.homepage.infrastructure.mybatis.data.ItemDO;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 

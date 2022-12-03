@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface ItemRepository {
     List<Item> getItemList(PaginationQuery query);
+
+    void saveItemList(List<Item> itemList) throws Exception;
+
+    void saveItem(Item item) throws Exception;
 }
