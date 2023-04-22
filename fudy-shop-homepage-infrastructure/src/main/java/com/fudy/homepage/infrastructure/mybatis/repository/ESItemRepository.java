@@ -1,11 +1,10 @@
-package com.fudy.homepage.application.repository.impl;
+package com.fudy.homepage.infrastructure.mybatis.repository;
 
-import com.fudy.homepage.application.repository.ItemRepository;
+import com.fudy.homepage.domain.repository.ItemRepository;
 import com.fudy.homepage.domain.Item;
 import com.fudy.homepage.infrastructure.elasticsearch.ESPagingQuery;
 import com.fudy.homepage.infrastructure.elasticsearch.ElasticSearchFacade;
 import com.fudy.homepage.infrastructure.elasticsearch.IndexCommand;
-import com.fudy.homepage.application.dto.PaginationQuery;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,11 +21,11 @@ public class ESItemRepository implements ItemRepository {
     private ElasticSearchFacade facade;
 
     @Override
-    public List<Item> getItemList(PaginationQuery query) {
+    public List<Item> getItemList(Integer pageIndex,Integer pageSize ) {
         ESPagingQuery q =  ESPagingQuery.builder()
                 .index(ITEM)
-                .from(query.getPageIndex())
-                .size(query.getPageSize())
+                .from(pageIndex)
+                .size(pageSize)
                 .sortField(ID)
                 .build();
         try {

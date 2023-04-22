@@ -1,12 +1,11 @@
-package com.fudy.homepage.application.repository;
+package com.fudy.homepage.domain.repository;
 
 import com.fudy.homepage.domain.Item;
-import com.fudy.homepage.application.dto.PaginationQuery;
 
 import java.util.List;
 
 public interface ItemRepository {
-    List<Item> getItemList(PaginationQuery query);
+    List<Item> getItemList(Integer pageIndex,Integer pageSize );
 
     void saveItemList(List<Item> itemList) throws Exception;
 

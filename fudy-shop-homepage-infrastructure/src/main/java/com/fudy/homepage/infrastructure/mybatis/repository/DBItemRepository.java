@@ -1,11 +1,10 @@
-package com.fudy.homepage.application.repository.impl;
+package com.fudy.homepage.infrastructure.mybatis.repository;
 
-import com.fudy.homepage.application.repository.ItemRepository;
+import com.fudy.homepage.domain.repository.ItemRepository;
 import com.fudy.homepage.domain.Item;
 import com.fudy.homepage.infrastructure.mybatis.convertor.ItemConvertor;
 import com.fudy.homepage.infrastructure.mybatis.data.ItemDO;
 import com.fudy.homepage.infrastructure.mybatis.mapper.ItemMapper;
-import com.fudy.homepage.application.dto.PaginationQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,8 +17,8 @@ public class DBItemRepository implements ItemRepository {
     @Autowired
     private ItemConvertor convertor;
 
-    public List<Item> getItemList(PaginationQuery query) {
-        List<ItemDO> list = mapper.selectList(query.getPageIndex(), query.getPageSize());
+    public List<Item> getItemList(Integer pageIndex,Integer pageSize ) {
+        List<ItemDO> list = mapper.selectList(pageIndex, pageSize);
         return convertor.toItemList(list);
     }
 

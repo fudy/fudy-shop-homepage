@@ -1,9 +1,8 @@
 package com.fudy.homepage.interfaces.http;
 
-import com.fudy.homepage.application.assembler.ItemCategoryLineAssembler;
-import com.fudy.homepage.infrastructure.nacos.ItemCategoryConfig;
-import com.fudy.homepage.application.dto.ItemCategoryLineDTO;
-import com.fudy.homepage.application.dto.Result;
+import com.fudy.homepage.interfaces.dto.ItemCategoryLineDTO;
+import com.fudy.homepage.interfaces.dto.Result;
+import com.fudy.homepage.interfaces.manager.ItemCategoryManagerInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,9 +15,7 @@ import java.util.List;
 @Controller
 public class ItemCategoryController {
     @Autowired
-    private ItemCategoryConfig config;
-    @Autowired
-    private ItemCategoryLineAssembler assembler;
+    private ItemCategoryManagerInterface itemCategory;
 
     /**
      * 获取首页商品列表
@@ -26,7 +23,7 @@ public class ItemCategoryController {
     @GetMapping("/api/item-categories")
     public @ResponseBody Result<List<ItemCategoryLineDTO>> getItemCategoryList() {
         try {
-            List<ItemCategoryLineDTO> data = assembler.toItemCategoryLineDTOList(config.getData());
+            List<ItemCategoryLineDTO> data = itemCategory.getItemCategoryList();
             return Result.success(data);
         } catch (Exception e) {
             log.error(e.getMessage());

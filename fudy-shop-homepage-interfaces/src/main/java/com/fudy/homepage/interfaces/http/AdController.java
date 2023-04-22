@@ -1,8 +1,8 @@
 package com.fudy.homepage.interfaces.http;
 
-import com.fudy.homepage.application.AdManager;
-import com.fudy.homepage.application.dto.AdDTO;
-import com.fudy.homepage.application.dto.Result;
+import com.fudy.homepage.interfaces.dto.AdDTO;
+import com.fudy.homepage.interfaces.dto.Result;
+import com.fudy.homepage.interfaces.manager.AdManagerInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class AdController {
     @Autowired
-    private AdManager adManager;
+    private AdManagerInterface adManager;
     /**
      * 获取首页广告
      */
