@@ -24,14 +24,18 @@ public class ItemSyncManager implements ItemSyncManagerInterface {
         log.warn("start item sync");
         List<Item> itemList = null;
         int pageIndex = 0, pageSize = 100;
-        do {
-            //从DB读取数据
-            itemList = dbRepository.getItemList(pageIndex, pageSize);
-            //将数据插入到搜索引擎ES中
-            esRepository.saveItemList(itemList);
-            //下一页
-            pageIndex += pageSize;
-        } while (itemList.size() == pageSize); //拿出一整页的数据，可能还有数据
+        try {
+            do {
+                //从DB读取数据
+                itemList = dbRepository.getItemList(pageIndex, pageSize);
+                //将数据插入到搜索引擎ES中
+                esRepository.saveItemList(itemList);
+                //下一页
+                pageIndex += pageSize;
+            } while (itemList.size() == pageSize); //拿出一整页的数据，可能还有数据
+        } catch (Exception e) {
+            log.error("error", e);
+        }
         log.warn("finish item sync");
     }
 }
