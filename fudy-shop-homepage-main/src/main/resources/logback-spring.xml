@@ -21,7 +21,7 @@
     <!-- 时间滚动输出 level为 INFO 日志 -->
     <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 正在记录的日志文件的路径及文件名 -->
-        <file>${log.path}/fudy-shop.log</file>
+        <file>${log.path}/fudy-shop-homepage.log</file>
         <!--日志文件输出格式-->
         <encoder>
             <pattern>${LOG_PATTERN}</pattern>

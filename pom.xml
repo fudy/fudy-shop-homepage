@@ -122,6 +122,7 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
+		<finalName>fudy-shop-homepage</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -153,6 +154,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<mainClass>com.fudy.homepage.FudyShopHomepageApplication</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
