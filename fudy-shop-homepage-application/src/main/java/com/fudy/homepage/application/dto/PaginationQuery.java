@@ -1,4 +1,4 @@
-package com.fudy.homepage.interfaces.dto;
+package com.fudy.homepage.application.dto;
 
 import lombok.Data;
 

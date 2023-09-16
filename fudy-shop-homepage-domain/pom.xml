@@ -12,17 +12,25 @@
     <artifactId>fudy-shop-homepage-domain</artifactId>
 
     <dependencies>
+        <!-- lombok生成代码setter,getter -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- 通用result -->
         <dependency>
             <groupId>com.fudy</groupId>
             <artifactId>fudy-shop-common</artifactId>
         </dependency>
+        <!-- 日志 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+        <!-- spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
     <build>

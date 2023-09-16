@@ -1,8 +1,8 @@
 package com.fudy.homepage.application.assembler;
 
 
-import com.fudy.homepage.domain.Item;
-import com.fudy.homepage.interfaces.dto.SimpleItemDTO;
+import com.fudy.homepage.application.dto.SimpleItemDTO;
+import com.fudy.homepage.domain.item.Item;
 import org.mapstruct.Mapper;
 
 import java.math.BigDecimal;

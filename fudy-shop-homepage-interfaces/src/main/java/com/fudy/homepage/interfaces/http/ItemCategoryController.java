@@ -1,8 +1,8 @@
 package com.fudy.homepage.interfaces.http;
 
-import com.fudy.homepage.interfaces.dto.ItemCategoryLineDTO;
-import com.fudy.homepage.interfaces.dto.Result;
-import com.fudy.homepage.interfaces.manager.ItemCategoryManagerInterface;
+import com.fudy.homepage.application.ItemCategoryManager;
+import com.fudy.homepage.application.dto.ItemCategoryLineDTO;
+import com.fudy.homepage.application.dto.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class ItemCategoryController {
     @Autowired
-    private ItemCategoryManagerInterface itemCategory;
+    private ItemCategoryManager itemCategory;
 
     /**
      * 获取首页商品列表

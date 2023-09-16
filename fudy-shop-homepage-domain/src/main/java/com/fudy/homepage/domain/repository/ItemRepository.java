@@ -1,6 +1,6 @@
 package com.fudy.homepage.domain.repository;
 
-import com.fudy.homepage.domain.Item;
+import com.fudy.homepage.domain.item.Item;
 
 import java.util.List;
 

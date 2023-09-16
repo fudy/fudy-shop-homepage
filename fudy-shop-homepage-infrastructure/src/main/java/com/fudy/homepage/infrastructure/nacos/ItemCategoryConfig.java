@@ -7,7 +7,8 @@ import com.alibaba.nacos.api.config.annotation.NacosConfigListener;
 import com.alibaba.nacos.spring.context.annotation.EnableNacos;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fudy.homepage.domain.ItemCategoryLine;
+import com.fudy.homepage.domain.item.ItemCategoryLine;
+import com.fudy.homepage.domain.repository.ItemCategoryRepository;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ import java.util.List;
 @Slf4j
 @Configuration
 @EnableNacos(globalProperties = @NacosProperties(serverAddr =  "${spring.cloud.nacos.config.server-addr}"))
-public class ItemCategoryConfig {
+public class ItemCategoryConfig implements ItemCategoryRepository {
     private final String DATA_ID = "fudy-shop-homepage-category";
     private final String GROUP = "DEFAULT_GROUP";
     @NacosInjected

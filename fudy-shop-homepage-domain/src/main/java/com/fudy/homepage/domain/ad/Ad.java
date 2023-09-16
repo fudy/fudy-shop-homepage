@@ -1,12 +1,9 @@
-package com.fudy.homepage.interfaces.dto;
+package com.fudy.homepage.domain.ad;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class AdDTO implements Serializable {
-    private static final long serialVersionUID = -4351387200263805762L;
+public class Ad {
     /**
      * 广告的商品详情链接
      */

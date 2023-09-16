@@ -1,6 +1,6 @@
 package com.fudy.homepage.interfaces.job;
 
-import com.fudy.homepage.interfaces.manager.ItemSyncManagerInterface;
+import com.fudy.homepage.application.ItemSyncManager;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ItemSyncJob {
     @Autowired
-    private ItemSyncManagerInterface manager;
+    private ItemSyncManager manager;
 
     @XxlJob("itemSyncJobHandler")
     public void execute() throws Exception {

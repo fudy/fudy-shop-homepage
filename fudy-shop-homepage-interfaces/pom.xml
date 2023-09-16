@@ -12,18 +12,22 @@
     <artifactId>fudy-shop-homepage-interfaces</artifactId>
 
     <dependencies>
+        <!-- 依赖的子模块 -->
+        <dependency>
+            <groupId>com.fudy</groupId>
+            <artifactId>fudy-shop-homepage-application</artifactId>
+        </dependency>
+        <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
+        <!-- 生成setter, getter等代码 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- 定时器 -->
         <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>

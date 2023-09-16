@@ -1,6 +1,6 @@
 package com.fudy.homepage.infrastructure.mybatis.convertor;
 
-import com.fudy.homepage.domain.Item;
+import com.fudy.homepage.domain.item.Item;
 import com.fudy.homepage.infrastructure.mybatis.data.ItemDO;
 import org.mapstruct.Mapper;
 

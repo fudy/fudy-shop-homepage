@@ -12,17 +12,34 @@
     <artifactId>fudy-shop-homepage-application</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.fudy</groupId>
-            <artifactId>fudy-shop-homepage-infrastructure</artifactId>
-        </dependency>
+        <!-- 子模块 -->
         <dependency>
             <groupId>com.fudy</groupId>
             <artifactId>fudy-shop-homepage-domain</artifactId>
         </dependency>
+        <!-- spring cloud -->
         <dependency>
-            <groupId>com.fudy</groupId>
-            <artifactId>fudy-shop-homepage-interfaces</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <!-- 转换器 -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <!-- bean validator 接口规范 -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- 限流 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
     </dependencies>
     <build>
