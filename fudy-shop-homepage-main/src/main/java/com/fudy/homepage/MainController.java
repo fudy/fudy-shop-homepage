@@ -13,7 +13,7 @@ public class MainController {
 
     @GetMapping("/")
     public @ResponseBody
-    Result<String> root() {
-        return Result.success("fudy-shop-homepage");
+    String root() {
+        return "fudy-shop-homepage";
     }
 }

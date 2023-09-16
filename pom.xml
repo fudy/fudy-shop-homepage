@@ -155,6 +155,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<mainClass>com.fudy.homepage.FudyShopHomepageApplication</mainClass>
+
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -162,6 +163,13 @@
 						</exclude>
 					</excludes>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
