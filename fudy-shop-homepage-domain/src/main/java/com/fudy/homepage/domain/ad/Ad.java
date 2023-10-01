@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Ad {
+    private Long id;
     /**
      * 广告的商品详情链接
      */

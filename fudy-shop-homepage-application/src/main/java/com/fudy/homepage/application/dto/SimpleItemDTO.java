@@ -7,6 +7,7 @@ import java.io.Serializable;
 @Data
 public class SimpleItemDTO implements Serializable {
     private static final long serialVersionUID = -1752495821105167936L;
+    private Long id;
     /**
      * 商品名称
      */
