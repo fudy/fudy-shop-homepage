@@ -11,6 +11,10 @@ public class Item {
      */
     private Long id;
     /**
+     * 商品id
+     */
+    private Long itemId;
+    /**
      * 商品名称
      */
     private String name;

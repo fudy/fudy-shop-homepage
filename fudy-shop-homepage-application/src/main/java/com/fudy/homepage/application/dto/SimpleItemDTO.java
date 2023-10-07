@@ -9,6 +9,10 @@ public class SimpleItemDTO implements Serializable {
     private static final long serialVersionUID = -1752495821105167936L;
     private Long id;
     /**
+     * 商品id
+     */
+    private Long itemId;
+    /**
      * 商品名称
      */
     private String name;

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface ItemMapper {
-    String NO_ID_COLUMNS = "created_time,modified_time,name,category_id,description,image,sub_images,seller_id,status,price";
+    String NO_ID_COLUMNS = "created_time,modified_time,name,category_id,description,image,sub_images,seller_id,status,price,item_id";
     String COLUMNS = "id," + NO_ID_COLUMNS;
 
     /**

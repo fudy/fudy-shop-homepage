@@ -14,6 +14,7 @@ public class ItemSyncJob {
 
     @XxlJob("itemSyncJobHandler")
     public void execute() throws Exception {
+        log.info("start execute job");
         manager.execute();
     }
 }

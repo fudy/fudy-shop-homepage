@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 @Data
 public class ItemDO extends CommonDO {
     /**
+     * 商品id
+     */
+    private Long itemId;
+    /**
      * 商品名称
      */
     private String name;
