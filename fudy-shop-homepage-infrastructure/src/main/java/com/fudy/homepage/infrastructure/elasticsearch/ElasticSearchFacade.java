@@ -2,11 +2,13 @@ package com.fudy.homepage.infrastructure.elasticsearch;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.SortOrder;
+import co.elastic.clients.elasticsearch._types.query_dsl.Operator;
 import co.elastic.clients.elasticsearch.core.BulkRequest;
 import co.elastic.clients.elasticsearch.core.BulkResponse;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.bulk.BulkResponseItem;
 import co.elastic.clients.elasticsearch.core.search.Hit;
+import com.fudy.homepage.domain.item.Item;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -74,5 +76,21 @@ public class ElasticSearchFacade {
                 }
             }
         }
+    }
+
+    /** ES 搜索， keyword中可包含多个关键字 */
+    public <T> List<T> search(String indexName, String field, String keyword, Class<T> clazz) throws IOException {
+        SearchResponse<T> resp = client.search(req -> req.index(indexName)
+                        .query(q -> q.match(m -> m.field(field).query(keyword).operator(Operator.Or)))
+                , clazz);
+        List<Hit<T>> list = resp.hits().hits();
+        if (null == list) {
+            return null;
+        }
+        List<T> resultList = new ArrayList<>();
+        for (Hit<T> hit : list) {
+            resultList.add(hit.source());
+        }
+        return resultList;
     }
 }

@@ -1,6 +1,7 @@
 package com.fudy.homepage.interfaces.http;
 
 import com.fudy.homepage.application.ItemManager;
+import com.fudy.homepage.application.dto.ItemSearchQuery;
 import com.fudy.homepage.application.dto.Result;
 import com.fudy.homepage.application.dto.SimpleItemDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,17 @@ public class ItemController {
                                                                  @RequestParam("pageSize") Integer pageSize) {
         try {
             List<SimpleItemDTO> data = itemManager.getItemList(pageIndex, pageSize);
+            return Result.success(data);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return Result.fail(e.getMessage());
+        }
+    }
+
+    @GetMapping("/api/search/items")
+    public @ResponseBody Result<List<SimpleItemDTO>> searchItems(ItemSearchQuery query) {
+        try {
+            List<SimpleItemDTO> data = itemManager.search(query);
             return Result.success(data);
         } catch (Exception e) {
             log.error(e.getMessage());

@@ -10,4 +10,8 @@ public interface ItemRepository {
     void saveItemList(List<Item> itemList) throws Exception;
 
     void saveItem(Item item) throws Exception;
+
+    default List<Item> search(String keyword) throws Exception {
+        return null;
+    }
 }

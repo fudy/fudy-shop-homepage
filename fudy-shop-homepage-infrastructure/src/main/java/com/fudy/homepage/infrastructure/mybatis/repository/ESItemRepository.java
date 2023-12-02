@@ -61,4 +61,9 @@ public class ESItemRepository implements ItemRepository {
     public void saveItem(Item item) throws Exception {
         facade.index(toIndexCommand(item));
     }
+
+    @Override
+    public List<Item> search(String keyword) throws Exception {
+        return facade.search(ITEM, "name", keyword, Item.class);
+    }
 }

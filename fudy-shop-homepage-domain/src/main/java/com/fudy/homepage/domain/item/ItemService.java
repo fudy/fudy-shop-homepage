@@ -60,4 +60,8 @@ public class ItemService {
         }
         log.warn("finish item sync");
     }
+
+    public List<Item> search(String keyword) throws Exception {
+        return esRepository.search(keyword);
+    }
 }
