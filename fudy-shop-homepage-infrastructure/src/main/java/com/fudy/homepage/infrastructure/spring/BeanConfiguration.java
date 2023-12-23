@@ -1,6 +1,6 @@
 package com.fudy.homepage.infrastructure.spring;
 
-import com.fudy.homepage.domain.ad.AdType;
+import com.fudy.homepage.domain.model.ad.AdType;
 import com.fudy.homepage.domain.repository.AdRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

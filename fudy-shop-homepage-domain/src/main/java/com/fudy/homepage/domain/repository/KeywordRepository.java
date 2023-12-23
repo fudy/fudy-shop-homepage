@@ -1,6 +1,6 @@
 package com.fudy.homepage.domain.repository;
 
-import com.fudy.homepage.domain.search.Keyword;
+import com.fudy.homepage.domain.model.search.Keyword;
 
 import java.util.List;
 

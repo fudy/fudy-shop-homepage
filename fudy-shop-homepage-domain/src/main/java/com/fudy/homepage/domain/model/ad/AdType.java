@@ -1,4 +1,4 @@
-package com.fudy.homepage.domain.ad;
+package com.fudy.homepage.domain.model.ad;
 
 public enum AdType {
     HOME_PAGE_AD("homePageAd"),

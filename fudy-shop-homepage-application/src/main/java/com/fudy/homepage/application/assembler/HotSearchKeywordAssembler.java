@@ -1,7 +1,7 @@
 package com.fudy.homepage.application.assembler;
 
 import com.fudy.homepage.application.dto.HotSearchKeywordDTO;
-import com.fudy.homepage.domain.search.Keyword;
+import com.fudy.homepage.domain.model.search.Keyword;
 import org.mapstruct.Mapper;
 
 import java.util.List;

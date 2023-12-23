@@ -9,7 +9,7 @@ import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.config.annotation.NacosConfigListener;
 import com.alibaba.nacos.spring.context.annotation.EnableNacos;
 import com.fudy.homepage.domain.repository.KeywordRepository;
-import com.fudy.homepage.domain.search.Keyword;
+import com.fudy.homepage.domain.model.search.Keyword;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;

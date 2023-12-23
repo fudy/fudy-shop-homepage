@@ -1,9 +1,9 @@
 package com.fudy.homepage.infrastructure.mybatis.repository;
 
 import com.fudy.homepage.domain.repository.ItemRepository;
-import com.fudy.homepage.domain.item.Item;
-import com.fudy.homepage.infrastructure.mybatis.convertor.ItemConvertor;
-import com.fudy.homepage.infrastructure.mybatis.data.ItemDO;
+import com.fudy.homepage.domain.model.item.Item;
+import com.fudy.homepage.infrastructure.convertor.ItemConvertor;
+import com.fudy.homepage.infrastructure.data.ItemDO;
 import com.fudy.homepage.infrastructure.mybatis.mapper.ItemMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

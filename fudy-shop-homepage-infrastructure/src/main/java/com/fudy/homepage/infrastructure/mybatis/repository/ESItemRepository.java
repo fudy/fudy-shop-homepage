@@ -1,7 +1,7 @@
 package com.fudy.homepage.infrastructure.mybatis.repository;
 
 import com.fudy.homepage.domain.repository.ItemRepository;
-import com.fudy.homepage.domain.item.Item;
+import com.fudy.homepage.domain.model.item.Item;
 import com.fudy.homepage.infrastructure.elasticsearch.ESPagingQuery;
 import com.fudy.homepage.infrastructure.elasticsearch.ElasticSearchFacade;
 import com.fudy.homepage.infrastructure.elasticsearch.IndexCommand;

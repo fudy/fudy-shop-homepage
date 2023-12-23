@@ -1,4 +1,4 @@
-package com.fudy.homepage.domain.item;
+package com.fudy.homepage.domain.model.item;
 
 import lombok.Data;
 

@@ -1,5 +1,7 @@
-package com.fudy.homepage.domain.item;
+package com.fudy.homepage.domain.service;
 
+import com.fudy.homepage.domain.model.item.Item;
+import com.fudy.homepage.domain.model.item.ItemCategoryLine;
 import com.fudy.homepage.domain.repository.ItemCategoryRepository;
 import com.fudy.homepage.domain.repository.ItemRepository;
 import lombok.extern.slf4j.Slf4j;

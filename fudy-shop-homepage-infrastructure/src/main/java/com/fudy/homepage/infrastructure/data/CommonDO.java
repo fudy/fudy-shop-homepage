@@ -1,4 +1,4 @@
-package com.fudy.homepage.infrastructure.mybatis.data;
+package com.fudy.homepage.infrastructure.data;
 
 import lombok.Data;
 

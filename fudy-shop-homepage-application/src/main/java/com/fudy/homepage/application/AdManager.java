@@ -2,8 +2,8 @@ package com.fudy.homepage.application;
 
 import com.fudy.homepage.application.assembler.AdAssembler;
 import com.fudy.homepage.application.dto.AdDTO;
-import com.fudy.homepage.domain.ad.AdService;
-import com.fudy.homepage.domain.ad.AdType;
+import com.fudy.homepage.domain.service.AdService;
+import com.fudy.homepage.domain.model.ad.AdType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

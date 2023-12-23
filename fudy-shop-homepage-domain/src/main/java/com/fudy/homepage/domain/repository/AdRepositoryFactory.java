@@ -1,5 +1,6 @@
-package com.fudy.homepage.domain.ad;
+package com.fudy.homepage.domain.repository;
 
+import com.fudy.homepage.domain.model.ad.AdType;
 import com.fudy.homepage.domain.repository.AdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

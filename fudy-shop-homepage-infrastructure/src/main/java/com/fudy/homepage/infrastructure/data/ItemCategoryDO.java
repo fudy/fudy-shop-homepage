@@ -1,14 +1,13 @@
-package com.fudy.homepage.application.dto;
+package com.fudy.homepage.infrastructure.data;
 
 import lombok.Data;
-
 import java.io.Serializable;
 
 @Data
-public class ItemCategoryDTO implements Serializable {
-    private static final long serialVersionUID = 8233429155952872973L;
+public class ItemCategoryDO implements Serializable {
+    private static final long serialVersionUID = 841981017868104037L;
     /**
-     * 类目ID
+     * 类目id
      */
     private Long categoryId;
     /**

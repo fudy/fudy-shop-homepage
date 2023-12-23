@@ -1,4 +1,4 @@
-package com.fudy.homepage.domain.search;
+package com.fudy.homepage.domain.model.search;
 
 import lombok.Getter;
 import lombok.Setter;

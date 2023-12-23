@@ -2,7 +2,7 @@ package com.fudy.homepage.application;
 
 import com.fudy.homepage.application.assembler.ItemCategoryLineAssembler;
 import com.fudy.homepage.application.dto.ItemCategoryLineDTO;
-import com.fudy.homepage.domain.item.ItemService;
+import com.fudy.homepage.domain.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
