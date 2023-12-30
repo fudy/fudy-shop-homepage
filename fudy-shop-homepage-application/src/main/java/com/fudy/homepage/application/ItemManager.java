@@ -2,6 +2,7 @@ package com.fudy.homepage.application;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.fudy.homepage.application.assembler.SimpleItemAssembler;
+import com.fudy.homepage.application.dto.CategoryItemSearchQuery;
 import com.fudy.homepage.application.dto.ItemSearchQuery;
 import com.fudy.homepage.application.dto.SimpleItemDTO;
 import com.fudy.homepage.domain.service.ItemService;
@@ -29,6 +30,11 @@ public class ItemManager {
 
     public List<SimpleItemDTO> search(@Valid ItemSearchQuery query) throws Exception {
         List<Item> itemList = service.search(query.getKeyword());
+        return assembler.toSimpleItemDTOList(itemList);
+    }
+
+    public List<SimpleItemDTO> searchItemsInCategory(CategoryItemSearchQuery query) throws Exception {
+        List<Item> itemList = service.searchByCategoryId(query.getCategoryId());
         return assembler.toSimpleItemDTOList(itemList);
     }
 }

@@ -1,6 +1,7 @@
 package com.fudy.homepage.interfaces.http;
 
 import com.fudy.homepage.application.ItemManager;
+import com.fudy.homepage.application.dto.CategoryItemSearchQuery;
 import com.fudy.homepage.application.dto.ItemSearchQuery;
 import com.fudy.homepage.application.dto.Result;
 import com.fudy.homepage.application.dto.SimpleItemDTO;
@@ -38,6 +39,17 @@ public class ItemController {
     public @ResponseBody Result<List<SimpleItemDTO>> searchItems(ItemSearchQuery query) {
         try {
             List<SimpleItemDTO> data = itemManager.search(query);
+            return Result.success(data);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return Result.fail(e.getMessage());
+        }
+    }
+
+    @GetMapping("/api/category-search/items")
+    public @ResponseBody Result<List<SimpleItemDTO>> searchItemsInCategory(CategoryItemSearchQuery query) {
+        try {
+            List<SimpleItemDTO> data = itemManager.searchItemsInCategory(query);
             return Result.success(data);
         } catch (Exception e) {
             log.error(e.getMessage());

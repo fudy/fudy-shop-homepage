@@ -31,4 +31,9 @@ public class DBItemRepository implements ItemRepository {
     public void saveItem(Item item) {
         throw new RuntimeException("not available");
     }
+
+    @Override
+    public List<Item> searchByCategoryId(Long categoryId) {
+        throw new RuntimeException("not available");
+    }
 }

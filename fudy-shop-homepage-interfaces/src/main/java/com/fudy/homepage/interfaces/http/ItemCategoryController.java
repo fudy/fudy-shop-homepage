@@ -3,10 +3,12 @@ package com.fudy.homepage.interfaces.http;
 import com.fudy.homepage.application.ItemCategoryManager;
 import com.fudy.homepage.application.dto.ItemCategoryLineDTO;
 import com.fudy.homepage.application.dto.Result;
+import com.fudy.homepage.application.dto.SimpleItemDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -30,4 +32,5 @@ public class ItemCategoryController {
             return Result.fail(e.getMessage());
         }
     }
+
 }

@@ -66,4 +66,8 @@ public class ItemService {
     public List<Item> search(String keyword) throws Exception {
         return esRepository.search(keyword);
     }
+
+    public List<Item> searchByCategoryId(Long categoryId) throws Exception {
+        return esRepository.searchByCategoryId(categoryId);
+    }
 }

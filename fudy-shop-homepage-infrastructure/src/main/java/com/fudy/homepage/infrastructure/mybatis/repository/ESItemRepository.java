@@ -66,4 +66,9 @@ public class ESItemRepository implements ItemRepository {
     public List<Item> search(String keyword) throws Exception {
         return facade.search(ITEM, "name", keyword, Item.class);
     }
+
+    @Override
+    public List<Item> searchByCategoryId(Long categoryId) throws Exception {
+        return facade.search(ITEM,"categoryId", ""+categoryId, Item.class);
+    }
 }

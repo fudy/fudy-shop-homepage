@@ -14,4 +14,6 @@ public interface ItemRepository {
     default List<Item> search(String keyword) throws Exception {
         return null;
     }
+
+    List<Item> searchByCategoryId(Long categoryId) throws Exception;
 }
