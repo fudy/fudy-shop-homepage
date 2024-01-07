@@ -1,9 +1,8 @@
 package com.fudy.homepage.domain.model.search;
 
 import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
+@Getter
 public class Keyword {
     private final String value;
 

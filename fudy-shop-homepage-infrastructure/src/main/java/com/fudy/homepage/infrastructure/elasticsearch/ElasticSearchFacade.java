@@ -1,14 +1,18 @@
 package com.fudy.homepage.infrastructure.elasticsearch;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
+import co.elastic.clients.elasticsearch._types.SortOptions;
 import co.elastic.clients.elasticsearch._types.SortOrder;
 import co.elastic.clients.elasticsearch._types.query_dsl.Operator;
 import co.elastic.clients.elasticsearch.core.BulkRequest;
 import co.elastic.clients.elasticsearch.core.BulkResponse;
+import co.elastic.clients.elasticsearch.core.SearchRequest;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.bulk.BulkResponseItem;
 import co.elastic.clients.elasticsearch.core.search.Hit;
+import co.elastic.clients.util.ObjectBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +20,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Function;
 
+/**
+ * https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/getting-started-java.html
+ */
 @Slf4j
 @Service
 public class ElasticSearchFacade {
@@ -78,10 +86,16 @@ public class ElasticSearchFacade {
     }
 
     /** ES 搜索， keyword中可包含多个关键字 */
-    public <T> List<T> search(String indexName, String field, String keyword, Class<T> clazz) throws IOException {
-        SearchResponse<T> resp = client.search(req -> req.index(indexName)
-                        .query(q -> q.match(m -> m.field(field).query(keyword).operator(Operator.Or)))
-                , clazz);
+    public <T> List<T> search(String indexName, String field, String keyword, String sortField, SortOrder sortOrder, Class<T> clazz) throws IOException {
+        Function<SearchRequest.Builder, ObjectBuilder<SearchRequest>> query = req -> {
+            req.index(indexName) //index
+                    .query(q -> q.match(m -> m.field(field).query(keyword).operator(Operator.Or))); // query
+            if (StringUtils.isNotBlank(sortField)) {
+                req.sort(SortOptions.of(builder -> builder.field(b -> b.field(sortField).order(sortOrder)))); // sort
+            }
+            return req;
+        };
+        SearchResponse<T> resp = client.search(query, clazz);
         List<Hit<T>> list = resp.hits().hits();
         if (null == list) {
             return null;

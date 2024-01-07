@@ -5,6 +5,10 @@ import com.fudy.homepage.application.assembler.SimpleItemAssembler;
 import com.fudy.homepage.application.dto.CategoryItemSearchQuery;
 import com.fudy.homepage.application.dto.ItemSearchQuery;
 import com.fudy.homepage.application.dto.SimpleItemDTO;
+import com.fudy.homepage.domain.model.ID;
+import com.fudy.homepage.domain.model.search.Keyword;
+import com.fudy.homepage.domain.model.search.SortField;
+import com.fudy.homepage.domain.model.search.SortOrder;
 import com.fudy.homepage.domain.service.ItemService;
 import com.fudy.homepage.domain.model.item.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +33,15 @@ public class ItemManager {
     }
 
     public List<SimpleItemDTO> search(@Valid ItemSearchQuery query) throws Exception {
-        List<Item> itemList = service.search(query.getKeyword());
+        List<Item> itemList = service.search(new Keyword(query.getKeyword()),
+                SortField.of(query.getSortField()), SortOrder.of(query.getSortOrder()));
         return assembler.toSimpleItemDTOList(itemList);
     }
 
     public List<SimpleItemDTO> searchItemsInCategory(CategoryItemSearchQuery query) throws Exception {
-        List<Item> itemList = service.searchByCategoryId(query.getCategoryId());
+        List<Item> itemList = service.searchByCategoryId(new ID(query.getCategoryId()),
+                SortField.of(query.getSortField()),
+                SortOrder.of(query.getSortOrder()));
         return assembler.toSimpleItemDTOList(itemList);
     }
 }

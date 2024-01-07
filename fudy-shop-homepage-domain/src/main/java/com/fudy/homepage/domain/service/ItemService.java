@@ -1,7 +1,11 @@
 package com.fudy.homepage.domain.service;
 
+import com.fudy.homepage.domain.model.ID;
 import com.fudy.homepage.domain.model.item.Item;
 import com.fudy.homepage.domain.model.item.ItemCategoryLine;
+import com.fudy.homepage.domain.model.search.Keyword;
+import com.fudy.homepage.domain.model.search.SortField;
+import com.fudy.homepage.domain.model.search.SortOrder;
 import com.fudy.homepage.domain.repository.ItemCategoryRepository;
 import com.fudy.homepage.domain.repository.ItemRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -63,11 +67,11 @@ public class ItemService {
         log.warn("finish item sync");
     }
 
-    public List<Item> search(String keyword) throws Exception {
-        return esRepository.search(keyword);
+    public List<Item> search(Keyword keyword, SortField sortField, SortOrder sortOrder) throws Exception {
+        return esRepository.search(keyword, sortField, sortOrder);
     }
 
-    public List<Item> searchByCategoryId(Long categoryId) throws Exception {
-        return esRepository.searchByCategoryId(categoryId);
+    public List<Item> searchByCategoryId(ID categoryId, SortField sortField, SortOrder sortOrder) throws Exception {
+        return esRepository.searchByCategoryId(categoryId, sortField, sortOrder);
     }
 }

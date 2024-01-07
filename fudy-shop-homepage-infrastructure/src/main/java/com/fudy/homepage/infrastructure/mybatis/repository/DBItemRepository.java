@@ -1,5 +1,9 @@
 package com.fudy.homepage.infrastructure.mybatis.repository;
 
+import com.fudy.homepage.domain.model.ID;
+import com.fudy.homepage.domain.model.search.Keyword;
+import com.fudy.homepage.domain.model.search.SortField;
+import com.fudy.homepage.domain.model.search.SortOrder;
 import com.fudy.homepage.domain.repository.ItemRepository;
 import com.fudy.homepage.domain.model.item.Item;
 import com.fudy.homepage.infrastructure.convertor.ItemConvertor;
@@ -33,7 +37,13 @@ public class DBItemRepository implements ItemRepository {
     }
 
     @Override
-    public List<Item> searchByCategoryId(Long categoryId) {
+    public List<Item> search(Keyword keyword, SortField sortField, SortOrder sortOrder) throws Exception {
         throw new RuntimeException("not available");
     }
+
+    @Override
+    public List<Item> searchByCategoryId(ID categoryId, SortField sortField, SortOrder sortOrder) throws Exception {
+        throw new RuntimeException("not available");
+    }
+
 }
